@@ -1,7 +1,9 @@
 import Vue from 'nativescript-vue';
+import RadListView from 'nativescript-ui-listview/vue';
 
-import HelloWorld from './components/HelloWorld';
+Vue.use(RadListView);
 
+import * as views from './views';
 
 import './styles.scss';
 
@@ -9,8 +11,5 @@ import './styles.scss';
 Vue.config.silent = (TNS_ENV === 'production');
 
 new Vue({
-
-  render: h => h('frame',[h(HelloWorld)]),
-
-
+  render: h => h('frame',[h(views.Home)]),
 }).$start();
