@@ -5,8 +5,8 @@
       backgroundColor="#53ba82"
       class="action-bar"
       title="NS-ui with Vue demo">
-      <NavigationButton visibility="collapse" />
-      <ActionItem text="Menu" @tap="$refs.drawer.nativeView.showDrawer()"/>
+      <ActionItem icon="res://ic_menu"
+                  @tap="$refs.drawer.nativeView.showDrawer()"/>
     </ActionBar>
     <StackLayout>
       <RadSideDrawer ref="drawer">
