@@ -10,8 +10,20 @@
     </ActionBar>
     <StackLayout>
       <RadSideDrawer ref="drawer">
-        <StackLayout ~drawerContent backgroundColor="white">
-          <Label text="Drawer" />
+        <StackLayout ~drawerContent
+                     class="drawer"
+                     backgroundColor="white"
+                     drawerContentSize="150">
+          <Image src="~/assets/images/NativeScript-Vue.png"
+                 class="sideLogo" width="100" height="100" />
+          <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
+          <Label text="Social" class="sideLabel"></Label>
+          <Label text="Promotions" class="sideLabel"></Label>
+          <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
+          <Label text="Important" class="sideLabel"></Label>
+          <Label text="Starred" class="sideLabel"></Label>
+          <Label text="Sent Mail" class="sideLabel"></Label>
+          <Label text="Drafts" class="sideLabel"></Label>
         </StackLayout>
         <StackLayout ~mainContent class="page-content">
           <item-list
