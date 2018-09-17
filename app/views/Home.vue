@@ -15,8 +15,10 @@
         </StackLayout>
         <StackLayout ~mainContent class="page-content">
           <item-list
+            ref="list"
             :items="itemList"
             @itemTap="onItemTap"
+            @itemDeleted="onItemDeleted"
             @pulling="onPulling">
           </item-list>
         </StackLayout>
@@ -51,6 +53,10 @@ export default {
         listview.notifyPullToRefreshFinished();
         listview.refresh();
       })
+    },
+    onItemDeleted (item) {
+      this.itemList.splice(this.itemList.indexOf(item), 1);
+      this.$refs.list.refresh();
     }
   },
 };

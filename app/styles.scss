@@ -26,6 +26,7 @@ $headings-color: $primary;
 
 .item {
   padding: 10;
+  background-color: white;
   border-color: $grey;
   border-bottom-width: 1;
   border-bottom-style: solid;
@@ -37,4 +38,17 @@ $headings-color: $primary;
 
 .thumbnail {
   margin-right: 10;
+}
+
+.swipe-item {
+  color: white;
+  padding: 16;
+}
+
+.swipe-item.left {
+  background-color: #240774;
+}
+
+.swipe-item.right {
+  background-color: #79000a;
 }
