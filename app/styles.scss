@@ -3,8 +3,34 @@
 @import '~nativescript-theme-core/scss/light';
 
 // Override variables here
+$secondary: #787e85;
+$red: #df2c45;
+$green: #53ba82;
+$grey: #eeeeee;
+$disabled: #787e85;
+$headings-color: $primary;
 
 @import '~nativescript-theme-core/scss/index';
 
 // Global SCSS styling
 // @see https://docs.nativescript.org/ui/styling
+
+.page {
+  align-items: center;
+  flex-direction: column;
+}
+
+.action-bar {
+  height: 50;
+}
+
+.item {
+  padding: 10;
+  border-color: $grey;
+  border-bottom-width: 1;
+  border-bottom-style: solid;
+}
+
+.big {
+  font-size: 20;
+}

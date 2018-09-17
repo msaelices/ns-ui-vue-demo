@@ -1,6 +1,11 @@
 <template>
   <Page class="page">
-    <ActionBar class="action-bar" title="Home">
+    <ActionBar
+      color="white"
+      backgroundColor="#53ba82"
+      class="action-bar"
+      title="NS-ui with Vue demo">
+      <NavigationButton visibility="collapse" />
       <ActionItem text="Menu" @tap="$refs.drawer.nativeView.showDrawer()"/>
     </ActionBar>
     <StackLayout>
@@ -8,7 +13,7 @@
         <StackLayout ~drawerContent backgroundColor="white">
           <Label text="Drawer" />
         </StackLayout>
-        <StackLayout ~mainContent>
+        <StackLayout ~mainContent class="page-content">
           <RadListView ref="listView"
                        for="item in itemList"
                        @itemTap="onItemTap">
@@ -43,11 +48,4 @@ export default {
 </script>
 
 <style scoped>
-  .hello-world {
-    margin: 20;
-  }
-
-  Label {
-    color: red;
-  }
 </style>
