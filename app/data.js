@@ -5,6 +5,7 @@ export const getItemList = (count) => {
       id: i,
       name: `Item ${i}`,
       description: `Item ${i} description`,
+      image: `~/assets/images/${i % 6}.png`,
     });
   }
   return itemList;

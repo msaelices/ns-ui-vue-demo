@@ -14,16 +14,9 @@
           <Label text="Drawer" />
         </StackLayout>
         <StackLayout ~mainContent class="page-content">
-          <RadListView ref="listView"
-                       for="item in itemList"
-                       @itemTap="onItemTap">
-            <v-template>
-              <StackLayout class="item" orientation="vertical">
-                <Label class="big" :text="item.name"></Label>
-                <Label :text="item.description"></Label>
-              </StackLayout>
-            </v-template>
-          </RadListView>
+          <item-list
+            :items="itemList"
+            @itemTap="onItemTap"></item-list>
         </StackLayout>
       </RadSideDrawer>
     </StackLayout>
@@ -43,7 +36,7 @@ export default {
     onItemTap({ item }) {
       console.log(`Tapped on ${item.name}`);
     },
-  }
+  },
 };
 </script>
 

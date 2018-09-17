@@ -6,9 +6,19 @@ import RadSideDrawer from 'nativescript-ui-sidedrawer/vue';
 
 Vue.use(RadListView);
 
+import * as comps from './components';
 import * as views from './views';
 
 import './styles.scss';
+
+const appComponents = [
+  comps.ItemList,
+]
+
+// Bind own components
+for (let c of appComponents) {
+  Vue.component(c.name, c)
+}
 
 // Prints Vue logs when --env.production is *NOT* set while building
 Vue.config.silent = (TNS_ENV === 'production');
