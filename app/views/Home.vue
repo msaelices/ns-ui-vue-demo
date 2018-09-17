@@ -16,7 +16,9 @@
         <StackLayout ~mainContent class="page-content">
           <item-list
             :items="itemList"
-            @itemTap="onItemTap"></item-list>
+            @itemTap="onItemTap"
+            @pulling="onPulling">
+          </item-list>
         </StackLayout>
       </RadSideDrawer>
     </StackLayout>
@@ -30,12 +32,26 @@ export default {
   data() {
     return {
       itemList: simpleItemList,
+      itemsPulled: 0,
     };
   },
   methods: {
     onItemTap({ item }) {
       console.log(`Tapped on ${item.name}`);
     },
+    onPulling (listview) {
+      this.itemsPulled++;
+
+      setTimeout(() => {
+        this.itemList.unshift({
+          name: `Item ${this.itemsPulled} pulled`,
+          description: 'This item was pulled',
+          image: '~/assets/images/pulled.png',
+        });
+        listview.notifyPullToRefreshFinished();
+        listview.refresh();
+      })
+    }
   },
 };
 </script>

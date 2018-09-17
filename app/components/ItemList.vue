@@ -1,7 +1,9 @@
 <template>
   <RadListView ref="listView"
                for="item in items"
-               @itemTap="onItemTap">
+               pullToRefresh="true"
+               @itemTap="onItemTap"
+               @pullToRefreshInitiated="onPullToRefreshInitiated">
     <v-template>
       <GridLayout columns="50, *" rows="*" class="item">
         <Image :src="item.image" col="0" class="thumbnail" />
@@ -25,7 +27,11 @@ export default {
   },
   methods: {
     onItemTap (event) {
-      this.$emit('itemTap', event)
+      this.$emit('itemTap', event);
+    },
+    onPullToRefreshInitiated ({ object }) {
+      console.log('Pulling...');
+      this.$emit('pulling', object);
     },
   },
 }
