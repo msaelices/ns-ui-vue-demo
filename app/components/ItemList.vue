@@ -2,8 +2,10 @@
   <RadListView ref="listView"
                for="item in items"
                pullToRefresh="true"
+               itemReorder="true"
                @itemTap="onItemTap"
-               @pullToRefreshInitiated="onPullToRefreshInitiated">
+               @pullToRefreshInitiated="onPullToRefreshInitiated"
+               @itemReordered="onItemReordered">
     <v-template>
       <GridLayout columns="50, *" rows="*" class="item">
         <Image :src="item.image" col="0" class="thumbnail" />
@@ -32,6 +34,9 @@ export default {
     onPullToRefreshInitiated ({ object }) {
       console.log('Pulling...');
       this.$emit('pulling', object);
+    },
+    onItemReordered({ index, data, object }) {
+      console.log(`Item reordered from index ${index} to ${data.targetIndex}`);
     },
   },
 }
