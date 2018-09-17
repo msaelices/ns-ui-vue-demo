@@ -44,38 +44,38 @@ export default {
   },
   methods: {
     onItemTap (event) {
-      this.$emit('itemTap', event);
+      this.$emit('itemTap', event)
     },
     onPullToRefreshInitiated ({ object }) {
-      console.log('Pulling...');
-      this.$emit('pulling', object);
+      console.log('Pulling...')
+      this.$emit('pulling', object)
     },
     onItemReordered({ index, data, object }) {
-      console.log(`Item reordered from index ${index} to ${data.targetIndex}`);
+      console.log(`Item reordered from index ${index} to ${data.targetIndex}`)
     },
     onSwipeStarted ({ data, object }) {
-      console.log(`Swipe started`);
-      const swipeLimits = data.swipeLimits;
-      const swipeView = object;
-      const leftItem = swipeView.getViewById('mark-view');
-      const rightItem = swipeView.getViewById('delete-view');
-      swipeLimits.left = leftItem.getMeasuredWidth();
-      swipeLimits.right = rightItem.getMeasuredWidth();
-      swipeLimits.threshold = leftItem.getMeasuredWidth() / 2;
+      console.log(`Swipe started`)
+      const swipeLimits = data.swipeLimits
+      const swipeView = object
+      const leftItem = swipeView.getViewById('mark-view')
+      const rightItem = swipeView.getViewById('delete-view')
+      swipeLimits.left = leftItem.getMeasuredWidth()
+      swipeLimits.right = rightItem.getMeasuredWidth()
+      swipeLimits.threshold = leftItem.getMeasuredWidth() / 2
     },
     onLeftSwipeClick ({ object }) {
-      console.log('left action tapped');
-      this.$emit('itemMarked', object.bindingContext);
-      this.$refs.listView.notifySwipeToExecuteFinished();
+      console.log('left action tapped')
+      this.$emit('itemMarked', object.bindingContext)
+      this.$refs.listView.notifySwipeToExecuteFinished()
     },
     onRightSwipeClick ({ object }) {
-      console.log('right action tapped');
+      console.log('right action tapped')
       // remove item
-      this.$emit('itemDeleted', object.bindingContext);
-      this.$refs.listView.notifySwipeToExecuteFinished();
+      this.$emit('itemDeleted', object.bindingContext)
+      this.$refs.listView.notifySwipeToExecuteFinished()
     },
     refresh () {
-      this.$refs.listView.refresh();
+      this.$refs.listView.refresh()
     }
   },
 }

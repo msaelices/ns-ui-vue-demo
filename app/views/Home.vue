@@ -40,21 +40,21 @@
 </template>
 
 <script>
-import { simpleItemList } from '../data';
+import { simpleItemList } from '../data'
 
 export default {
   data() {
     return {
       itemList: simpleItemList,
       itemsPulled: 0,
-    };
+    }
   },
   methods: {
     onItemTap({ item }) {
-      console.log(`Tapped on ${item.name}`);
+      console.log(`Tapped on ${item.name}`)
     },
     onPulling (listview) {
-      this.itemsPulled++;
+      this.itemsPulled++
 
       setTimeout(() => {
         this.itemList.unshift({
@@ -62,13 +62,13 @@ export default {
           description: 'This item was pulled',
           image: '~/assets/images/pulled.png',
         });
-        listview.notifyPullToRefreshFinished();
-        listview.refresh();
+        listview.notifyPullToRefreshFinished()
+        listview.refresh()
       })
     },
     onItemDeleted (item) {
-      this.itemList.splice(this.itemList.indexOf(item), 1);
-      this.$refs.list.refresh();
+      this.itemList.splice(this.itemList.indexOf(item), 1)
+      this.$refs.list.refresh()
     }
   },
 };
