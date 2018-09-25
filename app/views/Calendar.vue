@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import { getEvents } from '../data';
-import { CalendarViewMode, CalendarEventsViewMode } from 'nativescript-ui-calendar';
+import { getEvents } from '../data'
+import { CalendarViewMode, CalendarEventsViewMode } from 'nativescript-ui-calendar'
 
 export default {
   name: 'calendar-view',
@@ -34,22 +34,22 @@ export default {
   },
   methods: {
     onWeekTap() {
-      this.viewMode = CalendarViewMode.Week;
+      this.viewMode = CalendarViewMode.Week
     },
     onMonthTap() {
-      this.viewMode = CalendarViewMode.Month;
+      this.viewMode = CalendarViewMode.Month
     },
     onMonthNamesTap() {
-      this.viewMode = CalendarViewMode.MonthNames;
+      this.viewMode = CalendarViewMode.MonthNames
     },
     onYearTap() {
-      this.viewMode = CalendarViewMode.Year;
+      this.viewMode = CalendarViewMode.Year
     },
     onDayTap() {
-      this.viewMode = CalendarViewMode.Day;
+      this.viewMode = CalendarViewMode.Day
     },
   },
-};
+}
 </script>
 
 <style scoped>
