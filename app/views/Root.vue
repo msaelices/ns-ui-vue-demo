@@ -28,12 +28,15 @@ export default {
   methods: {
     goToHome () {
       this.$navigateTo(Home)
+      this.$refs.drawer.nativeView.closeDrawer()
     },
     goToList () {
       this.$navigateTo(List)
+      this.$refs.drawer.nativeView.closeDrawer()
     },
     goToCalendar () {
       this.$navigateTo(Calendar)
+      this.$refs.drawer.nativeView.closeDrawer()
     },
   },
 }
