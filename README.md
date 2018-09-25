@@ -20,7 +20,7 @@ tns run <platform> --bundle
 
 ## Screencast
 
-![ns-ui-demo](https://user-images.githubusercontent.com/136875/45621442-939e3780-ba80-11e8-94d5-a46f08d6c366.gif)
+![ns-ui-demo](https://user-images.githubusercontent.com/136875/46014244-e0ac8a00-c0ce-11e8-87c3-6eb100c936d7.gif)
 
 
 ## Using Vue Devtools
