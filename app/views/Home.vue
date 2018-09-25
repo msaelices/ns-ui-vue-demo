@@ -60,7 +60,7 @@ export default {
         this.itemList.unshift({
           name: `Item ${this.itemsPulled} pulled`,
           description: 'This item was pulled',
-          image: '~/assets/images/pulled.png',
+          image: '~/assets/images/pulled.jpg',
         });
         listview.notifyPullToRefreshFinished()
         listview.refresh()
