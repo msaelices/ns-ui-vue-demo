@@ -13,6 +13,9 @@
       <Label text="Calendar" class="sideLabel"
             @tap="goToCalendar">
       </Label>
+      <Label text="DataForm" class="sideLabel"
+            @tap="goToDataForm">
+      </Label>
     </StackLayout>
     <Frame ~mainContent>
       <home-view></home-view>
@@ -21,7 +24,7 @@
 </template>
 
 <script>
-import { Calendar, Home, List } from '../views'
+import { Calendar, DataForm, Home, List } from '../views'
 
 export default {
   name: 'root-view',
@@ -36,6 +39,10 @@ export default {
     },
     goToCalendar () {
       this.$navigateTo(Calendar)
+      this.$refs.drawer.nativeView.closeDrawer()
+    },
+    goToDataForm () {
+      this.$navigateTo(DataForm)
       this.$refs.drawer.nativeView.closeDrawer()
     },
   },

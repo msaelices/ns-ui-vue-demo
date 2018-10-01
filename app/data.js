@@ -1,5 +1,6 @@
 import { Color } from 'tns-core-modules/color'
 import { CalendarEvent } from 'nativescript-ui-calendar'
+import { Property } from '../../../nativescript-ui-calendar/src/node_modules/tns-core-modules/ui/editable-text-base/editable-text-base';
 
 export const getEvents = (count) => {
   let now = new Date()
@@ -45,3 +46,26 @@ export const getItemList = (count) => {
 }
 
 export const simpleItemList = getItemList(20)
+
+export const getMovies = () => {
+  let movies = new Array();
+  movies.push({id: 123, name: 'Zootopia'})
+  movies.push({id: 217, name: 'Captain America'})
+  movies.push({id: 324, name: 'The Jungle Book'})
+  return movies;
+}
+
+export class MovieConverter {
+
+  constructor(movies) {
+    this._movies = movies
+  }
+
+  convertFrom(id) {
+    return this._movies.filter((movie) => movie.id === id)[0].name
+  }
+
+  convertTo(name) {
+    return this._movies.filter((movie) => movie.name === name)[0].id
+  }
+}
