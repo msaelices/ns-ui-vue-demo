@@ -1,6 +1,5 @@
 import { Color } from 'tns-core-modules/color'
 import { CalendarEvent } from 'nativescript-ui-calendar'
-import { Property } from '../../../nativescript-ui-calendar/src/node_modules/tns-core-modules/ui/editable-text-base/editable-text-base';
 
 export const getEvents = (count) => {
   let now = new Date()
