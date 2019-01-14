@@ -36,7 +36,10 @@ export default {
     onPulling (listview) {
       this.itemsPulled++
 
-      setTimeout(() => {
+      // in order to avoid race conditions (only on iOS),
+      // in which the UI may not be completely updated here
+      // we use this.$nextTick call
+      this.$nextTick(() => {
         this.itemList.unshift({
           name: `Item ${this.itemsPulled} pulled`,
           description: 'This item was pulled',
