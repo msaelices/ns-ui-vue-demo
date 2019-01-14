@@ -62,6 +62,10 @@ export default {
       swipeLimits.left = leftItem.getMeasuredWidth()
       swipeLimits.right = rightItem.getMeasuredWidth()
       swipeLimits.threshold = leftItem.getMeasuredWidth() / 2
+      setTimeout(() => {
+        console.log('Notify that swipe to executed is finished')
+        object.notifySwipeToExecuteFinished()
+      }, 2000)
     },
     onLeftSwipeClick ({ object }) {
       console.log('left action tapped')
