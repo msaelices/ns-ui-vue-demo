@@ -7,7 +7,8 @@
                @itemTap="onItemTap"
                @pullToRefreshInitiated="onPullToRefreshInitiated"
                @itemReordered="onItemReordered"
-               @itemSwipeProgressStarted="onSwipeStarted">
+               @itemSwipeProgressStarted="onSwipeStarted"
+               @itemSwipeProgressEnded="onSwipeEnded">
     <v-template>
       <GridLayout columns="50, *" rows="*" class="item">
         <Image :src="item.image" col="0" class="thumbnail" />
@@ -62,6 +63,10 @@ export default {
       swipeLimits.left = leftItem.getMeasuredWidth()
       swipeLimits.right = rightItem.getMeasuredWidth()
       swipeLimits.threshold = leftItem.getMeasuredWidth() / 2
+    },
+    onSwipeEnded({ object }) {
+      console.log('Swipe ended')
+      object.notifySwipeToExecuteFinished()
     },
     onLeftSwipeClick ({ object }) {
       console.log('left action tapped')
