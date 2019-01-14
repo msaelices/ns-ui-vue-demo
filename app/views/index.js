@@ -1,4 +1,5 @@
 export { default as Calendar } from './Calendar'
+export { default as Chart } from './Chart'
 export { default as DataForm } from './DataForm'
 export { default as Home } from './Home'
 export { default as List } from './List'
